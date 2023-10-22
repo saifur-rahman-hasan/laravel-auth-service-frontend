@@ -9,6 +9,9 @@ import { DropdownButton } from '@/components/DropdownLink'
 import { useAuth } from '@/hooks/auth'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
+import AppServiceManagerQuickNavMenu from '@/components/AppServiceManagerQuickNavMenu'
+import DashboardQuickNavMenu from '@/components/DashboardQuickNavMenu'
+import { Button } from 'flowbite-react'
 
 const Navigation = ({ user }) => {
     const router = useRouter()
@@ -35,7 +38,11 @@ const Navigation = ({ user }) => {
                             <NavLink
                                 href="/dashboard"
                                 active={router.pathname === '/dashboard'}>
-                                Dashboard
+                                <DashboardQuickNavMenu />
+                            </NavLink>
+
+                            <NavLink href="/dashboard/appServiceManager">
+                                <AppServiceManagerQuickNavMenu />
                             </NavLink>
                         </div>
                     </div>
